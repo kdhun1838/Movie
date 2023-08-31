@@ -197,17 +197,19 @@ const PostCommentList = ({
 
   return (
     <PostCommentListBlock>
-      <PostCommentForm onSubmit={handleCommentSubmit}>
-        <CommentInput
-          type="text"
-          value={comment}
-          onChange={handleCommentChange}
-          placeholder="댓글 작성하기"
-        />
-        <CommentButton type="submit">
-          댓글 작성 <FontAwesomeIcon icon={faPen} />
-        </CommentButton>
-      </PostCommentForm>
+      {user && (
+        <PostCommentForm onSubmit={handleCommentSubmit}>
+          <CommentInput
+            type="text"
+            value={comment}
+            onChange={handleCommentChange}
+            placeholder="댓글 작성하기"
+          />
+          <CommentButton type="submit">
+            댓글 작성 <FontAwesomeIcon icon={faPen} />
+          </CommentButton>
+        </PostCommentForm>
+      )}
       <CommentListBlock>
         {postcomment &&
           postcomment.map((comment) => (

@@ -386,7 +386,7 @@ const AdminMovieTime = ({
                     }
                   >
                     <option defaultValue="">자막유무</option>
-                    <option value="">자막없음</option>
+                    <option value=" ">자막없음</option>
                     <option value="자막">자막</option>
                   </select>
                 </div>

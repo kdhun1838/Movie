@@ -11,6 +11,8 @@ const SET_POST_SCHEDULE = "adminschedule/SET_POST_SCHEDULE";
 
 const DELETE_SCHEDULE = "adminschedule/DELETE_SCHEDULE";
 
+const RESET_SCHEDULE = "adminschedule/RESET_SCHEDULE";
+
 // 액션 생성--------------------------------------------------------
 
 export const setSchedule = createAction(SET_SCHEDULE, ({ key, value }) => ({
@@ -21,6 +23,8 @@ export const setSchedule = createAction(SET_SCHEDULE, ({ key, value }) => ({
 export const setPostSchedule = createAction(SET_POST_SCHEDULE, (schedule) => (schedule));
 
 export const deleteSchedule = createAction(DELETE_SCHEDULE, (num) => (num));
+
+export const resetSchedule = createAction(RESET_SCHEDULE);
 
 // 사가 함수--------------------------------------------------------
 
@@ -63,6 +67,7 @@ const adminschedule = handleActions(
     [SET_POST_SCHEDULE]: (state) => ({
       ...state,
     }),
+    [RESET_SCHEDULE]: () => initialState,
 
     // ----------------------------------------------------
   },
